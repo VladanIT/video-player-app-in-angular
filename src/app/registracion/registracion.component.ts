@@ -12,7 +12,6 @@ export class RegistracionComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
   floatingName: string = "";
   surname: string = "";
   email: string = "";
@@ -33,7 +32,7 @@ export class RegistracionComponent implements OnInit {
 
     let users;
 
-    if(localStorageContent === null) {
+    if (localStorageContent === null) {
       users = [];
     } else {
       users = JSON.parse(localStorageContent);
