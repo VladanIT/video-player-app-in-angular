@@ -1,0 +1,32 @@
+<div class="container">
+  <form>
+    <!-- <img class="mb-4" src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
+    <h1 class="h3 mb-3 fw-normal">Please register</h1>
+
+    <div class="form-floating">
+      <input type="text" class="form-control" id="floatingName" name="floatingName" placeholder="Name" [(ngModel)]="floatingName">
+      <label for="floatingName">Name</label>
+    </div>
+    <div class="form-floating">
+      <input type="text" class="form-control" id="floatingSurname" name="surname" placeholder="Surname" [(ngModel)]="surname">
+      <label for="floatingSurname">Surname</label>
+    </div>
+    <div class="form-floating">
+      <input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com" [(ngModel)]="email">
+      <label for="floatingInput">Email address</label>
+    </div>
+    <div class="form-floating">
+      <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password" [(ngModel)]="password">
+      <label for="floatingPassword">Password</label>
+    </div>
+
+    <div class="login form-floating">
+      <a href="" class="go-to-login lead">Go to login</a>
+    </div>
+
+    <button class="w-100 btn btn-lg btn-primary" type="submit" (click)="saveData()">Register</button>
+    <p class="mt-5 mb-3 text-muted">Video App</p>
+  </form>
+</div>
+
+

@@ -1,0 +1,22 @@
+.container{
+  width: 350px;
+  margin: 150px auto;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  -webkit-box-shadow: -3px 3px 20px 1px rgba(0,0,0,0.27);
+  -moz-box-shadow: -3px 3px 20px 1px rgba(0,0,0,0.27);
+  box-shadow: -3px 3px 20px 1px rgba(0,0,0,0.27);
+}
+
+.form-floating{
+  margin-top  : 10px;
+}
+
+.go-to-registration{
+  color: black;
+  float: left;
+  margin: 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
