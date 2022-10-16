@@ -25,12 +25,8 @@ export class RegistracionComponent implements OnInit {
       password: this.password
     }
 
-    const jsonData = JSON.stringify(person, null, 2);
-    // console.log(jsonData);
-    // localStorage.setItem('user', jsonData);
     const localStorageContent = localStorage.getItem('users');
-
-    let users;
+    let users = [];
 
     if (localStorageContent === null) {
       users = [];
@@ -38,8 +34,7 @@ export class RegistracionComponent implements OnInit {
       users = JSON.parse(localStorageContent);
     }
 
-    users.push(jsonData);
-
-    localStorage.setItem('users', JSON.stringify(users, null, 2));
+    users.push(person);
+    localStorage.setItem('users', JSON.stringify(users));
   }
 }
