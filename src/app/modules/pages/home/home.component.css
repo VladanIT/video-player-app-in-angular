@@ -1,3 +1,15 @@
 .content{
   min-height: 600px;
 }
+
+.articles{
+  width: 90%;
+  margin: 0px auto;
+}
+
+.article{
+  width: 300px;
+  height: 300px;
+  float: left;
+  margin: 10px;
+}
