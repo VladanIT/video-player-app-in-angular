@@ -1,3 +1,18 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
 .content{
   min-height: 600px;
+}
+
+.list-of-videos{
+  width: 90%;
+  margin: 60px auto;
+  text-align: center;
+}
+
+.padding-field{
+  padding: 70px;
 }
