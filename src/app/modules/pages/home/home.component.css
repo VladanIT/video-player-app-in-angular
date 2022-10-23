@@ -2,6 +2,11 @@
   min-height: 600px;
 }
 
+.home-header{
+  margin: 70px auto;
+  width: 270px;
+}
+
 .articles{
   width: 90%;
   margin: 0px auto;

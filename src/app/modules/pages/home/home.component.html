@@ -1,11 +1,11 @@
 <app-header></app-header>
 
 <div class="content">
-  <h1>Pocetna strana</h1>
+  <h1 class="home-header">Pocetna strana</h1>
 
   <div class="articles" *ngFor="let video of videos">
     <div class="article">
-      <iframe src="https://www.youtube.com/embed/{{ video.link }}" frameborder="0"></iframe>
+      <iframe [src]="video.link | safe" frameborder="0"></iframe>
       <h5>{{ video.name }}</h5>
       <p>{{ video.opis }}</p>
     </div>

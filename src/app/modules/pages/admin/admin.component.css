@@ -7,6 +7,11 @@
   min-height: 600px;
 }
 
+.admin-header{
+  margin: 70px auto;
+  width: 270px;
+}
+
 .list-of-videos{
   width: 90%;
   margin: 60px auto;

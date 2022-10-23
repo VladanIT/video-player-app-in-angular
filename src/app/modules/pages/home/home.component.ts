@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'videos',
+  selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
@@ -18,14 +18,11 @@ export class HomeComponent implements OnInit {
 
     const localStorageContent = localStorage.getItem('videos');
 
-
     if (localStorageContent === null) {
       alert("ne postoji ni jedan video");
     } else {
       this.videos = JSON.parse(localStorageContent);
     }
-
-    console.log(this.videos)
 
     return this.videos;
   }

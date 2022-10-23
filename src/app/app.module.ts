@@ -10,6 +10,7 @@ import { HeaderComponent } from './shared/layout/components/header/header.compon
 import { FooterComponent } from './shared/layout/components/footer/footer.component';
 import { HomeComponent } from './modules/pages/home/home.component';
 import { AdminComponent } from './modules/pages/admin/admin.component';
+import { SafePipe } from './shared/pipes/safe.pipe';
 
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
@@ -26,7 +27,8 @@ const appRoutes: Routes = [
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    AdminComponent
+    AdminComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,
