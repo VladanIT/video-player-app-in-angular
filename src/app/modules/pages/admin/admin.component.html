@@ -12,22 +12,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr class="width-of-body-rows">
+      <tr class="width-of-body-rows" *ngFor="let video of videos">
         <td>
-          <iframe src="https://www.youtube.com/embed/eUgpFZvdyzQ" frameborder="0"></iframe>
+          <iframe [src]="video.link | safe" frameborder="0"></iframe>
         </td>
-        <td class="padding-field">Naslov videa</td>
-        <td class="padding-field">Opis video</td>
-        <td class="padding-field">Link ka videu</td>
-      </tr>
-
-      <tr class="width-of-body-rows">
-        <td>
-          <iframe src="https://www.youtube.com/embed/npnp--SSx_8?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </td>
-        <td class="padding-field">Naslov videa</td>
-        <td class="padding-field">Opis video</td>
-        <td class="padding-field">Link ka videu</td>
+        <td class="padding-field">{{ video.name }}</td>
+        <td class="padding-field">{{ video.opis }}</td>
+        <td class="padding-field"><a href="{{ video.link }}">Link ka videu</a></td>
       </tr>
     </tbody>
   </table>

@@ -12,4 +12,19 @@ export class AdminComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  videos: any;
+
+  ngAfterContentInit(){
+
+    const localStorageContent = localStorage.getItem('videos');
+
+    if (localStorageContent === null) {
+      alert("ne postoji ni jedan video");
+    } else {
+      this.videos = JSON.parse(localStorageContent);
+    }
+
+    return this.videos;
+  }
+
 }
