@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { VideoListService } from 'src/app/shared/services/video-list/video-list.service';
 
 @Component({
   selector: 'app-admin',
@@ -7,24 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  constructor(public list: VideoListService) { }
 
   videos: any;
 
-  ngAfterContentInit(){
-
-    const localStorageContent = localStorage.getItem('videos');
-
-    if (localStorageContent === null) {
-      alert("ne postoji ni jedan video");
-    } else {
-      this.videos = JSON.parse(localStorageContent);
-    }
-
-    return this.videos;
+  ngOnInit(): void {
+    this.videos = this.list.getVideoList();
   }
 
 }
