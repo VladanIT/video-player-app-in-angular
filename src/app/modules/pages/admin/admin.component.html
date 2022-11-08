@@ -1,7 +1,8 @@
 <app-header></app-header>
 
 <div class="content">
-  <h1 class="admin-header">Admin strana</h1>
+  <h1 class="admin-header">Admin strana | Video snimci</h1>
+  <button class="add-video btn btn-primary">Dodaj video</button>
   <table class="table table-striped list-of-videos">
     <thead>
       <tr>
@@ -9,6 +10,8 @@
         <th scope="col">Naslov</th>
         <th scope="col">Opis</th>
         <th scope="col">Link</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
       </tr>
     </thead>
     <tbody>
@@ -19,6 +22,8 @@
         <td class="padding-field">{{ video.name }}</td>
         <td class="padding-field">{{ video.opis }}</td>
         <td class="padding-field"><a href="{{ video.link }}">Link ka videu</a></td>
+        <td class="padding-field"><a href="{{ video.link }}">Edit</a></td>
+        <td class="padding-field"><a href="{{ video.link }}">Delete</a></td>
       </tr>
     </tbody>
   </table>

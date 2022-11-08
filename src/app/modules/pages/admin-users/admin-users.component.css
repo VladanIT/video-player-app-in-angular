@@ -9,21 +9,11 @@
 
 .admin-header{
   margin: 70px auto;
-  width: 510px;
+  width: 450px;
 }
 
-.add-video{
-  width: 200px;
-  height: 50px;
-  margin: 0px 150px;
-}
-
-.list-of-videos{
+.list-of-users{
   width: 90%;
   margin: 60px auto;
   text-align: center;
-}
-
-.padding-field{
-  padding: 70px;
 }

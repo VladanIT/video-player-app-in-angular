@@ -11,12 +11,14 @@ import { FooterComponent } from './shared/layout/components/footer/footer.compon
 import { HomeComponent } from './modules/pages/home/home.component';
 import { AdminComponent } from './modules/pages/admin/admin.component';
 import { SafePipe } from './shared/pipes/safe.pipe';
+import { AdminUsersComponent } from './modules/pages/admin-users/admin-users.component';
 
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
   {path: 'registracion', component: RegistracionComponent},
   {path: 'home', component: HomeComponent},
-  {path: 'admin', component: AdminComponent}
+  {path: 'admin', component: AdminComponent},
+  {path: 'admin-users', component: AdminUsersComponent}
 ]
 
 @NgModule({
@@ -28,7 +30,8 @@ const appRoutes: Routes = [
     FooterComponent,
     HomeComponent,
     AdminComponent,
-    SafePipe
+    SafePipe,
+    AdminUsersComponent
   ],
   imports: [
     BrowserModule,

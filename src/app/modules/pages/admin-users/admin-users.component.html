@@ -1,0 +1,29 @@
+<app-header></app-header>
+
+<div class="content">
+  <h1 class="admin-header">Admin strana | Korisnici</h1>
+  <table class="table table-striped list-of-users">
+    <thead>
+      <tr>
+        <th scope="col">Ime</th>
+        <th scope="col">Prezime</th>
+        <th scope="col">Email</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="width-of-body-rows" *ngFor="let user of users">
+        <td>{{ user.name }}</td>
+        <td>{{ user.lastName }}</td>
+        <td>{{ user.email }}</td>
+        <td><a href="{{ user.name }}">Edit</a></td>
+        <td><a href="{{ user.name }}">Delete</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<app-footer></app-footer>
+
