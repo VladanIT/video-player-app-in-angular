@@ -17,3 +17,7 @@
   margin: 60px auto;
   text-align: center;
 }
+
+.dialog-open-btn{
+  padding: 3px;
+}

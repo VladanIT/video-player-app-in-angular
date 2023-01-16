@@ -14,9 +14,10 @@ import { HomeComponent } from './modules/pages/home/home.component';
 import { AdminComponent } from './modules/pages/admin/admin.component';
 import { SafePipe } from './shared/pipes/safe.pipe';
 import { AdminUsersComponent } from './modules/pages/admin-users/admin-users.component';
-import { AddVideoModalComponent } from './modules/modals/add-video/add-video-modal.component';
-import { EditVideoComponent } from './modules/modals/edit-video/edit-video.component';
-import { DeleteVideoComponent } from './modules/modals/delete-video/delete-video.component';
+import { AddVideoModalComponent } from './modules/modals/videos/add-video/add-video-modal.component';
+import { EditVideoComponent } from './modules/modals/videos/edit-video/edit-video.component';
+import { DeleteVideoComponent } from './modules/modals/videos/delete-video/delete-video.component';
+import { DeleteComponent } from './modules/modals/users/delete/delete.component';
 
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
@@ -39,7 +40,8 @@ const appRoutes: Routes = [
     AdminUsersComponent,
     AddVideoModalComponent,
     EditVideoComponent,
-    DeleteVideoComponent
+    DeleteVideoComponent,
+    DeleteComponent,
   ],
   imports: [
     BrowserModule,

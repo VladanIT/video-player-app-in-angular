@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
 import { VideoListService } from 'src/app/shared/services/video-list/video-list.service';
-import { AddVideoModalComponent } from '../../modals/add-video/add-video-modal.component';
+import { AddVideoModalComponent } from '../../modals/videos/add-video/add-video-modal.component';
 
 @Component({
   selector: 'app-admin',
