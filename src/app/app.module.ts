@@ -18,6 +18,7 @@ import { AddVideoModalComponent } from './modules/modals/videos/add-video/add-vi
 import { EditVideoComponent } from './modules/modals/videos/edit-video/edit-video.component';
 import { DeleteVideoComponent } from './modules/modals/videos/delete-video/delete-video.component';
 import { DeleteComponent } from './modules/modals/users/delete/delete.component';
+import { EditUserComponent } from './modules/modals/users/edit-user/edit-user.component';
 
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
@@ -42,6 +43,7 @@ const appRoutes: Routes = [
     EditVideoComponent,
     DeleteVideoComponent,
     DeleteComponent,
+    EditUserComponent,
   ],
   imports: [
     BrowserModule,

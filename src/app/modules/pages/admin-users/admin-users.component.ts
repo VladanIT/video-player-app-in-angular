@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DeleteComponent } from '../../modals/users/delete/delete.component';
+import { EditUserComponent } from '../../modals/users/edit-user/edit-user.component';
 
 @Component({
   selector: 'app-admin-users',
@@ -11,8 +12,11 @@ export class AdminUsersComponent implements OnInit {
 
   constructor(public dialog: MatDialog) { }
 
-  openDialog(){
+  openDialogDelete(){
     this.dialog.open(DeleteComponent);
+  }
+  openDialogEdit(){
+    this.dialog.open(EditUserComponent)
   }
 
   users: any;
