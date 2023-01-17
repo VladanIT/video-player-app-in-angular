@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { DeleteComponent } from '../../modals/users/delete/delete.component';
-import { EditUserComponent } from '../../modals/users/edit-user/edit-user.component';
+import { DeleteUserComponent } from '../../../modals/users/delete-user/delete-user.component';
+import { EditUserComponent } from '../../../modals/users/edit-user/edit-user.component';
 
 @Component({
-  selector: 'app-admin-users',
-  templateUrl: './admin-users.component.html',
-  styleUrls: ['./admin-users.component.css']
+  selector: 'app-users',
+  templateUrl: './users.component.html',
+  styleUrls: ['./users.component.css']
 })
-export class AdminUsersComponent implements OnInit {
+export class UsersComponent implements OnInit {
 
   constructor(public dialog: MatDialog) { }
 
   openDialogDelete(){
-    this.dialog.open(DeleteComponent);
+    this.dialog.open(DeleteUserComponent);
   }
   openDialogEdit(){
     this.dialog.open(EditUserComponent)

@@ -6,26 +6,28 @@ import { FormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './modules/pages/login/login.component';
-import { RegistracionComponent } from './modules/pages/registracion/registracion.component';
+import { LoginComponent } from './modules/pages/front/login/login.component';
+import { RegistracionComponent } from './modules/pages/front/registracion/registracion.component';
 import { HeaderComponent } from './shared/layout/components/header/header.component';
 import { FooterComponent } from './shared/layout/components/footer/footer.component';
-import { HomeComponent } from './modules/pages/home/home.component';
-import { AdminComponent } from './modules/pages/admin/admin.component';
+import { HomeComponent } from './modules/pages/front/home/home.component';
 import { SafePipe } from './shared/pipes/safe.pipe';
-import { AdminUsersComponent } from './modules/pages/admin-users/admin-users.component';
-import { AddVideoModalComponent } from './modules/modals/videos/add-video/add-video-modal.component';
+import { VideoComponent } from './modules/pages/admin/video/video.component';
+import { UsersComponent } from './modules/pages/admin/users/users.component';
+import { AddVideoComponent } from './modules/modals/videos/add-video/add-video.component';
 import { EditVideoComponent } from './modules/modals/videos/edit-video/edit-video.component';
 import { DeleteVideoComponent } from './modules/modals/videos/delete-video/delete-video.component';
-import { DeleteComponent } from './modules/modals/users/delete/delete.component';
 import { EditUserComponent } from './modules/modals/users/edit-user/edit-user.component';
+import { DeleteUserComponent } from './modules/modals/users/delete-user/delete-user.component';
+
+
 
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
   {path: 'registracion', component: RegistracionComponent},
   {path: 'home', component: HomeComponent},
-  {path: 'admin', component: AdminComponent},
-  {path: 'admin-users', component: AdminUsersComponent}
+  {path: 'admin', component: VideoComponent},
+  {path: 'admin-users', component: UsersComponent}
 ]
 
 @NgModule({
@@ -36,14 +38,14 @@ const appRoutes: Routes = [
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    AdminComponent,
     SafePipe,
-    AdminUsersComponent,
-    AddVideoModalComponent,
     EditVideoComponent,
     DeleteVideoComponent,
-    DeleteComponent,
     EditUserComponent,
+    AddVideoComponent,
+    VideoComponent,
+    UsersComponent,
+    DeleteUserComponent,
   ],
   imports: [
     BrowserModule,

@@ -2,16 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
 import { VideoListService } from 'src/app/shared/services/video-list/video-list.service';
-import { AddVideoModalComponent } from '../../modals/videos/add-video/add-video-modal.component';
-import { DeleteVideoComponent } from '../../modals/videos/delete-video/delete-video.component';
-import { EditVideoComponent } from '../../modals/videos/edit-video/edit-video.component';
+import { AddVideoComponent } from '../../../modals/videos/add-video/add-video.component';
+import { DeleteVideoComponent } from '../../../modals/videos/delete-video/delete-video.component';
+import { EditVideoComponent } from '../../../modals/videos/edit-video/edit-video.component';
 
 @Component({
-  selector: 'app-admin',
-  templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.css']
+  selector: 'app-video',
+  templateUrl: './video.component.html',
+  styleUrls: ['./video.component.css']
 })
-export class AdminComponent implements OnInit {
+export class VideoComponent implements OnInit {
 
   constructor(public list: VideoListService, private dialog: MatDialog) { }
 
@@ -22,7 +22,7 @@ export class AdminComponent implements OnInit {
   }
 
   openDialogAddVideo(){
-    this.dialog.open(AddVideoModalComponent);
+    this.dialog.open(AddVideoComponent);
   }
 
   openDialogEdit(){
