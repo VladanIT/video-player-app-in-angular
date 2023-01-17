@@ -12,4 +12,29 @@ export class AddVideoComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  name: string = "";
+  description: string = "";
+  link: string = "";
+
+  async saveData(){
+    alert('korak 1');
+    const video = {
+      name : this.name,
+      opis: this.description,
+      link : this.link
+    }
+
+    const localStorageContent = localStorage.getItem('videos');
+    let videos = [];
+
+    if(localStorageContent === null){
+      videos = [];
+    } else {
+      videos = JSON.parse(localStorageContent);
+    }
+
+    videos.push(video);
+    localStorage.setItem('videos', JSON.stringify(videos));
+  }
+
 }
