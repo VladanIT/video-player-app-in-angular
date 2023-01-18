@@ -29,8 +29,10 @@ export class VideoComponent implements OnInit {
     this.dialog.open(EditVideoComponent);
   }
 
-  openDialogDelete(){
-    this.dialog.open(DeleteVideoComponent);
+  openDialogDelete(value : any){
+    this.dialog.open(DeleteVideoComponent, {
+      data: value
+    });
   }
 
 }
