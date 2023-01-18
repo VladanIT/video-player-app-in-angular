@@ -12,4 +12,8 @@ export class DeleteVideoComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  deleteItem(){
+
+  }
+
 }

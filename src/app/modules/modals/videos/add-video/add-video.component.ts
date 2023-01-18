@@ -12,6 +12,7 @@ export class AddVideoComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  idVideo: string = "";
   name: string = "";
   description: string = "";
   link: string = "";
@@ -19,6 +20,7 @@ export class AddVideoComponent implements OnInit {
   async saveData(){
     alert('korak 1');
     const video = {
+      idVideo : this.idVideo,
       name : this.name,
       opis: this.description,
       link : this.link
