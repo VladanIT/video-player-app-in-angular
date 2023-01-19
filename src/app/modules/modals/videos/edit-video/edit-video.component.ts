@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-edit-video',
@@ -7,9 +8,45 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditVideoComponent implements OnInit {
 
-  constructor() { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit(): void {
+  }
+
+  name: string = "";
+  description: string = "";
+  link: string = "";
+
+  editVideo(){
+    // const video = {
+    //   name: this.name,
+    //   opis: this.description,
+    //   link: this.link
+    // }
+
+    const localStorageContent = localStorage.getItem('videos');
+    let videos = [];
+
+    if(localStorageContent === null){
+      alert("Greska! Ne postoji ni jedan video u skladistu koji moze da se izmeni.");
+    } else {
+      videos = JSON.parse(localStorageContent);
+    }
+
+    videos.forEach((video: {
+      name: string;
+      opis: string;
+      link: string;
+      idVideo: any;
+    }) => {
+      if(video.idVideo == this.data){
+        video.name = this.name;
+        video.opis = this.description;
+        video.link = this.link;
+      }
+    });
+
+    localStorage.setItem('videos', JSON.stringify(videos));
   }
 
 }

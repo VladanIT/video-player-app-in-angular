@@ -23,7 +23,7 @@
         <td class="padding-field">{{ video.name }}</td>
         <td class="padding-field">{{ video.opis }}</td>
         <td class="padding-field"><a href="{{ video.link }}">Link ka videu</a></td>
-        <td class="padding-field"><button id="{{ video.idVideo}}" class="btn btn-primary" mat-button (click)="openDialogEdit()">Edit</button></td>
+        <td class="padding-field"><button id="{{ video.idVideo}}" class="btn btn-primary" mat-button (click)="openDialogEdit(video.idVideo)">Edit</button></td>
         <td class="padding-field"><button class="btn btn-danger" mat-button (click)="openDialogDelete(video.idVideo)">Delete</button></td>
       </tr>
     </tbody>

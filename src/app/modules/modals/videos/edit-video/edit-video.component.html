@@ -1,10 +1,10 @@
 <div class="dialog">
   <h2 class="dialog-title">Izmena videa</h2>
   <form class="form-dialog">
-    <input type="text" name="input-name" id="input-name" class="form-control input-data" placeholder="Naziv videa">
-    <input type="text" name="input-description" id="input-description" class="form-control input-data" placeholder="Opis videa">
-    <input type="text" name="input-link" id="input-link" class="form-control input-data" placeholder="Link videa">
-    <button class="btn btn-primary input-data">Izmeni</button>
+    <input type="text" [(ngModel)]="name" name="input-name" id="input-name" class="form-control input-data" placeholder="Naziv videa">
+    <input type="text" [(ngModel)]="description" name="input-description" id="input-description" class="form-control input-data" placeholder="Opis videa">
+    <input type="text" [(ngModel)]="link" name="input-link" id="input-link" class="form-control input-data" placeholder="Link videa">
+    <button class="btn btn-primary input-data" (click)="editVideo()">Izmeni</button>
     <button class="btn btn-danger input-data close-modal">Odustani</button>
   </form>
 </div>
