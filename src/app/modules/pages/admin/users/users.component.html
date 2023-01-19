@@ -17,8 +17,8 @@
         <td>{{ user.name }}</td>
         <td>{{ user.lastName }}</td>
         <td>{{ user.email }}</td>
-        <td><button id="{{ user.name }}" class="btn btn-primary dialog-open-btn" mat-button (click)="openDialogEdit()">Edit</button></td>
-        <td><button id="{{ user.name }}" class="btn btn-danger dialog-open-btn" mat-button (click)="openDialogDelete()">Delete</button></td>
+        <td><button id="{{ user.name }}" class="btn btn-primary dialog-open-btn" mat-button (click)="openDialogEdit(user.idUser)">Edit</button></td>
+        <td><button id="{{ user.name }}" class="btn btn-danger dialog-open-btn" mat-button (click)="openDialogDelete(user.idUser)">Delete</button></td>
       </tr>
     </tbody>
   </table>

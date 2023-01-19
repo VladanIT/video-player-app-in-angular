@@ -4,8 +4,8 @@
     <input type="text" [(ngModel)]="name" name="input-name" id="input-name" class="form-control input-data" placeholder="Naziv videa">
     <input type="text" [(ngModel)]="description" name="input-description" id="input-description" class="form-control input-data" placeholder="Opis videa">
     <input type="text" [(ngModel)]="link" name="input-link" id="input-link" class="form-control input-data" placeholder="Link videa">
-    <button class="btn btn-primary input-data" (click)="editVideo()">Izmeni</button>
-    <button class="btn btn-danger input-data close-modal">Odustani</button>
+    <button class="btn btn-primary input-data" (click)="editVideo()" mat-button mat-dialog-close>Izmeni</button>
+    <button class="btn btn-danger input-data close-modal" mat-button mat-dialog-close>Odustani</button>
   </form>
 </div>
 

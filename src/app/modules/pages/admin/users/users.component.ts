@@ -12,17 +12,21 @@ export class UsersComponent implements OnInit {
 
   constructor(public dialog: MatDialog) { }
 
-  openDialogDelete(){
-    this.dialog.open(DeleteUserComponent);
-  }
-  openDialogEdit(){
-    this.dialog.open(EditUserComponent)
-  }
-
   users: any;
 
   ngOnInit(): void {
     this.users = this.getUsersList();
+  }
+
+  openDialogDelete(value: any){
+    this.dialog.open(DeleteUserComponent, {
+      data: value
+    });
+  }
+  openDialogEdit(value: any){
+    this.dialog.open(EditUserComponent, {
+      data: value
+    })
   }
 
   getUsersList(){
