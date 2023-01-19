@@ -18,11 +18,6 @@ export class EditVideoComponent implements OnInit {
   link: string = "";
 
   editVideo(){
-    // const video = {
-    //   name: this.name,
-    //   opis: this.description,
-    //   link: this.link
-    // }
 
     const localStorageContent = localStorage.getItem('videos');
     let videos = [];

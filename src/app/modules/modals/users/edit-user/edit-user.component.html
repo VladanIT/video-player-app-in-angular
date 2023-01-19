@@ -1,9 +1,9 @@
 <h2>Izmena korisnika</h2>
 <form class="editForm">
-  <input type="text" class="form-control" name="firstName" id="firstName" placeholder="Ime">
-  <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Prezime">
-  <input type="email" class="form-control" name="email" id="email" placeholder="Email">
-  <input type="password" class="form-control" name="password" id="password" placeholder="Lozinka">
-  <button class="btn btn-primary form-control">Izmeni</button>
-  <button class="btn btn-danger form-control">Odustani</button>
+  <input [(ngModel)]="firstName" type="text" class="form-control" name="firstName" id="firstName" placeholder="Ime">
+  <input [(ngModel)]="lastName" type="text" class="form-control" name="lastName" id="lastName" placeholder="Prezime">
+  <input [(ngModel)]="email" type="email" class="form-control" name="email" id="email" placeholder="Email">
+  <input [(ngModel)]="password" type="password" class="form-control" name="password" id="password" placeholder="Lozinka">
+  <button (click)="editUser()" class="btn btn-primary form-control" mat-button mat-dialog-close>Izmeni</button>
+  <button class="btn btn-danger form-control" mat-button mat-dialog-close>Odustani</button>
 </form>
