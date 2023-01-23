@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { DeleteUserComponent } from '../../../modals/users/delete-user/delete-user.component';
-import { EditUserComponent } from '../../../modals/users/edit-user/edit-user.component';
+import { DeleteUserComponent } from '../../modals/users/delete-user/delete-user.component';
+import { EditUserComponent } from '../../modals/users/edit-user/edit-user.component';
 
 @Component({
   selector: 'app-users',
@@ -18,12 +18,12 @@ export class UsersComponent implements OnInit {
     this.users = this.getUsersList();
   }
 
-  openDialogDelete(value: any){
+  openDialogDelete(value: number){
     this.dialog.open(DeleteUserComponent, {
       data: value
     });
   }
-  openDialogEdit(value: any){
+  openDialogEdit(value: number){
     this.dialog.open(EditUserComponent, {
       data: value
     })

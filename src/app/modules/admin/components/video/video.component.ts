@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
 import { VideoListService } from 'src/app/shared/services/video-list/video-list.service';
-import { AddVideoComponent } from '../../../modals/videos/add-video/add-video.component';
-import { DeleteVideoComponent } from '../../../modals/videos/delete-video/delete-video.component';
-import { EditVideoComponent } from '../../../modals/videos/edit-video/edit-video.component';
+import { AddVideoComponent } from '../../modals/videos/add-video/add-video.component';
+import { DeleteVideoComponent } from '../../modals/videos/delete-video/delete-video.component';
+import { EditVideoComponent } from '../../modals/videos/edit-video/edit-video.component';
 
 @Component({
   selector: 'app-video',
