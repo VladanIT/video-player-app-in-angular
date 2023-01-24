@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { AuthService } from '../../services/auth.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(public authService: AuthService) { }
 
   ngOnInit(): void {
   }
@@ -16,27 +18,6 @@ export class LoginComponent implements OnInit {
   password: string = "";
 
   login(){
-    const user = {
-      email: this.email,
-      password: this.password
-    }
-
-    const localStorageContent = localStorage.getItem('users');
-    let users;
-
-    if (localStorageContent === null) {
-      alert("Ne postoji taj korisnik!");
-    } else {
-      users = JSON.parse(localStorageContent);
-    }
-
-    users.forEach((u: { email: string; password: string; }) => {
-      if (u.email == this.email && u.password == this.password) {
-        alert("Postoji korisnik!");
-      } else {
-        alert("Nije tacan email ili sifra!");
-      }
-    });
+    this.authService.login(this.email, this.password);
   }
-
 }
