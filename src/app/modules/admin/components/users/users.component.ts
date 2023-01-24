@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+
 import { DeleteUserComponent } from '../../modals/users/delete-user/delete-user.component';
 import { EditUserComponent } from '../../modals/users/edit-user/edit-user.component';
+import { UsersService } from '../../services/users/users.service';
 
 @Component({
   selector: 'app-users',
@@ -10,7 +12,7 @@ import { EditUserComponent } from '../../modals/users/edit-user/edit-user.compon
 })
 export class UsersComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, public usersService: UsersService) { }
 
   users: any;
 
@@ -30,18 +32,7 @@ export class UsersComponent implements OnInit {
   }
 
   getUsersList(){
-
-    let users = [];
-
-    const localStorageContent = localStorage.getItem('users');
-
-    if (localStorageContent === null) {
-      alert("ne postoji ni jedan video");
-    } else {
-      users = JSON.parse(localStorageContent);
-    }
-
-    return users;
+    return this.usersService.select();
   }
 
 }

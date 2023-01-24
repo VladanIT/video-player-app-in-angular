@@ -46,10 +46,4 @@ export class AuthService {
       }
     });
   }
-
-  select(){}
-
-  edit(){}
-
-  delete(){}
 }
