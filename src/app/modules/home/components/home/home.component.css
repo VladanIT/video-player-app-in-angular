@@ -18,3 +18,9 @@
   float: left;
   margin: 10px;
 }
+
+.message{
+  width: 350px;
+  margin: 0px auto;
+  font-size: 25px;
+}

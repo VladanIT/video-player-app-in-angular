@@ -3,13 +3,11 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { MatDialogModule } from '@angular/material/dialog';
 
+import { SharedModule } from 'src/app/shared/shared.module';
 import { AdminRoutingModule } from './admin-routing.module';
 import { UsersComponent } from './components/users/users.component';
 import { VideoComponent } from './components/video/video.component';
-import { HeaderComponent } from 'src/app/shared/layout/components/header/header.component';
-import { FooterComponent } from 'src/app/shared/layout/components/footer/footer.component';
 
-import { SafePipe } from './../../shared/pipes/safe.pipe';
 import { EditUserComponent } from './modals/users/edit-user/edit-user.component';
 import { DeleteUserComponent } from './modals/users/delete-user/delete-user.component';
 import { EditVideoComponent } from './modals/videos/edit-video/edit-video.component';
@@ -21,9 +19,6 @@ import { AddVideoComponent } from './modals/videos/add-video/add-video.component
   declarations: [
     UsersComponent,
     VideoComponent,
-    HeaderComponent,
-    FooterComponent,
-    SafePipe,
     AddVideoComponent,
     EditUserComponent,
     DeleteUserComponent,
@@ -34,7 +29,8 @@ import { AddVideoComponent } from './modals/videos/add-video/add-video.component
     CommonModule,
     FormsModule,
     MatDialogModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    SharedModule
   ]
 })
 export class AdminModule { }

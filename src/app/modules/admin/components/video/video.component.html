@@ -28,6 +28,9 @@
       </tr>
     </tbody>
   </table>
+  <ng-container *ngIf="videos.length < 1">
+    <p class="message">Nema ni jedan video trenutno.</p>
+  </ng-container>
 
 </div>
 

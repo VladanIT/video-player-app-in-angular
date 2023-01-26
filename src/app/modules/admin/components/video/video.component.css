@@ -27,3 +27,9 @@
 .padding-field{
   padding: 70px;
 }
+
+.message{
+  width: 350px;
+  margin: 0px auto;
+  font-size: 25px;
+}

@@ -18,7 +18,6 @@ export class AddVideoComponent implements OnInit {
   link: string = "";
 
   async saveData(){
-    alert('korak 1');
     const video = {
       idVideo : this.idVideo,
       name : this.name,
