@@ -7,12 +7,12 @@ export class AuthService {
 
   constructor() { }
 
-  signUp(floatingName: string, surname: string, email: string, password: string){
+  signUp(data: any){
     const person = {
-      name: floatingName,
-      lastName: surname,
-      email: email,
-      password: password
+      name: data.firstName,
+      lastName: data.lastName,
+      email: data.mail,
+      password: data.psw
     }
 
     const localStorageContent = localStorage.getItem('users');
@@ -28,7 +28,7 @@ export class AuthService {
     localStorage.setItem('users', JSON.stringify(users));
   }
 
-  login(email: string, password: string){
+  login(data: any){
     const localStorageContent = localStorage.getItem('users');
     let users;
 
@@ -39,7 +39,7 @@ export class AuthService {
     }
 
     users.forEach((u: { email: string; password: string; }) => {
-      if (u.email == email && u.password == password) {
+      if (u.email == data.mail && u.password == data.psw) {
         alert("Postoji korisnik!");
       } else {
         alert("Nije tacan email ili sifra!");

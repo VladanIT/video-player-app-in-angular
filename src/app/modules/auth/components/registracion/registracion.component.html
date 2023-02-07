@@ -1,22 +1,22 @@
 <div class="container">
-  <form>
+  <form [formGroup]="signUpForm">
     <!-- <img class="mb-4" src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
     <h1 class="h3 mb-3 fw-normal">Please register</h1>
 
     <div class="form-floating">
-      <input type="text" class="form-control" id="floatingName" name="floatingName" placeholder="Name" [(ngModel)]="floatingName">
+      <input formControlName="firstName" type="text" class="form-control" id="floatingName" name="floatingName" placeholder="Name">
       <label for="floatingName">Name</label>
     </div>
     <div class="form-floating">
-      <input type="text" class="form-control" id="floatingSurname" name="surname" placeholder="Surname" [(ngModel)]="surname">
+      <input formControlName="lastName" type="text" class="form-control" id="floatingSurname" name="surname" placeholder="Surname">
       <label for="floatingSurname">Surname</label>
     </div>
     <div class="form-floating">
-      <input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com" [(ngModel)]="email">
+      <input formControlName="mail" type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com">
       <label for="floatingInput">Email address</label>
     </div>
     <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password" [(ngModel)]="password">
+      <input formControlName="psw" type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password">
       <label for="floatingPassword">Password</label>
     </div>
 

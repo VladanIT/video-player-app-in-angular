@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 import { AuthService } from '../../services/auth.service';
 
@@ -9,17 +10,19 @@ import { AuthService } from '../../services/auth.service';
 })
 export class RegistracionComponent implements OnInit {
 
+  signUpForm = new FormGroup({
+    firstName: new FormControl(''),
+    lastName: new FormControl(''),
+    mail: new FormControl(''),
+    psw: new FormControl('')
+  });
+
   constructor(public authService: AuthService) { }
 
   ngOnInit(): void {
   }
 
-  floatingName: string = "";
-  surname: string = "";
-  email: string = "";
-  password: string = "";
-
   saveData(){
-    this.authService.signUp(this.floatingName, this.surname, this.email, this.password);
+    this.authService.signUp(this.signUpForm.value);
   }
 }
