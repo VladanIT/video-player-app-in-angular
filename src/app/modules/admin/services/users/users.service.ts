@@ -22,7 +22,7 @@ export class UsersService {
     return users;
   }
 
-  edit(firstName: string, lastName: string, email: string, password: string, data: number){
+  edit(data: any, ID: number){
     const localStorageContent = localStorage.getItem('users');
     let users = [];
 
@@ -39,11 +39,11 @@ export class UsersService {
       password: string;
       idUser: number;
     }) => {
-      if(user.idUser == data){
-        user.name = firstName;
-        user.lastName = lastName;
-        user.email = email;
-        user.password = password
+      if(user.idUser == ID){
+        user.name = data.firstName;
+        user.lastName = data.lastName;
+        user.email = data.mail;
+        user.password = data.pswd
       }
     });
 

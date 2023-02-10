@@ -1,5 +1,8 @@
+import { FormGroup, FormControl } from '@angular/forms';
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+
+import { VideosService } from './../../../services/videos/videos.service';
 
 @Component({
   selector: 'app-edit-video',
@@ -8,40 +11,23 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class EditVideoComponent implements OnInit {
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public ID: number, public VideosService: VideosService) { }
 
   ngOnInit(): void {
   }
 
-  name: string = "";
-  description: string = "";
-  link: string = "";
+  editForm = new FormGroup({
+    name: new FormControl(''),
+    description: new FormControl(''),
+    link: new FormControl('')
+  });
+
+  // name: string = "";
+  // description: string = "";
+  // link: string = "";
 
   editVideo(){
-
-    const localStorageContent = localStorage.getItem('videos');
-    let videos = [];
-
-    if(localStorageContent === null){
-      alert("Greska! Ne postoji ni jedan video u skladistu koji moze da se izmeni.");
-    } else {
-      videos = JSON.parse(localStorageContent);
-    }
-
-    videos.forEach((video: {
-      name: string;
-      opis: string;
-      link: string;
-      idVideo: any;
-    }) => {
-      if(video.idVideo == this.data){
-        video.name = this.name;
-        video.opis = this.description;
-        video.link = this.link;
-      }
-    });
-
-    localStorage.setItem('videos', JSON.stringify(videos));
+    this.VideosService.editVideo(this.editForm.value, this.ID)
   }
 
 }

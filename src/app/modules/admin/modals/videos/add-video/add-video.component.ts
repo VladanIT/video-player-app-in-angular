@@ -1,4 +1,7 @@
+import { FormGroup, FormControl } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+
+import { VideosService } from './../../../services/videos/videos.service';
 
 @Component({
   selector: 'app-add-video',
@@ -7,35 +10,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddVideoComponent implements OnInit {
 
-  constructor() { }
+  constructor(public VideosService: VideosService) { }
 
   ngOnInit(): void {
   }
 
-  idVideo: string = "";
-  name: string = "";
-  description: string = "";
-  link: string = "";
+  addForm = new FormGroup({
+    idVideo: new FormControl(''),
+    name: new FormControl(''),
+    description: new FormControl(''),
+    link: new FormControl('')
+  });
+
+  // idVideo: string = "";
+  // name: string = "";
+  // description: string = "";
+  // link: string = "";
 
   async saveData(){
-    const video = {
-      idVideo : this.idVideo,
-      name : this.name,
-      opis: this.description,
-      link : this.link
-    }
-
-    const localStorageContent = localStorage.getItem('videos');
-    let videos = [];
-
-    if(localStorageContent === null){
-      videos = [];
-    } else {
-      videos = JSON.parse(localStorageContent);
-    }
-
-    videos.push(video);
-    localStorage.setItem('videos', JSON.stringify(videos));
+    this.VideosService.addVideo(this.addForm.value);
   }
 
 }

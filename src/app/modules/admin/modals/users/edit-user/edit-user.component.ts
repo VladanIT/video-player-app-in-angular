@@ -1,3 +1,4 @@
+import { FormGroup, FormControl } from '@angular/forms';
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { UsersService } from '../../../services/users/users.service';
@@ -9,7 +10,14 @@ import { UsersService } from '../../../services/users/users.service';
 })
 export class EditUserComponent implements OnInit {
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: number, public usersService: UsersService) { }
+  editForm = new FormGroup({
+    firstName: new FormControl(''),
+    lastName: new FormControl(''),
+    mail: new FormControl(''),
+    pswd: new FormControl('')
+  });
+
+  constructor(@Inject(MAT_DIALOG_DATA) public ID: number, public usersService: UsersService) { }
 
   ngOnInit(): void {
   }
@@ -20,7 +28,7 @@ export class EditUserComponent implements OnInit {
   password: string = "";
 
   editUser(){
-    this.usersService.edit(this.firstName, this.lastName, this.email, this.password, this.data);
+    this.usersService.edit(this.editForm.value, this.ID);
   }
 
 }
