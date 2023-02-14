@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   signUp(data: any){
     const person = {
@@ -40,10 +41,14 @@ export class AuthService {
 
     users.forEach((u: { email: string; password: string; }) => {
       if (u.email == data.mail && u.password == data.psw) {
-        alert("Postoji korisnik!");
-      } else {
-        alert("Nije tacan email ili sifra!");
+        localStorage.setItem('login', JSON.stringify(data.mail));
+        this.router.navigate(['/home']);
       }
     });
+  }
+
+  logout(){
+    localStorage.removeItem('login');
+    this.router.navigate(['/auth/login']);
   }
 }
