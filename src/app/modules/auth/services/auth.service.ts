@@ -47,6 +47,10 @@ export class AuthService {
     });
   }
 
+  IsLoggedIn(){
+    return !!localStorage.getItem('login');
+  }
+
   logout(){
     localStorage.removeItem('login');
     this.router.navigate(['/auth/login']);
