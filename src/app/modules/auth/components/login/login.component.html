@@ -4,12 +4,18 @@
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
     <div class="form-floating">
-      <input formControlName="mail" type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com">
-      <label for="floatingInput">Email address</label>
+      <input formControlName="email" type="email" id="email" name="email" class="form-control" placeholder="name@example.com">
+      <label for="email">Email address</label>
+      <span class="error-block" *ngIf="email?.invalid && email?.touched">
+        Nije dobar email!
+      </span>
     </div>
     <div class="form-floating">
-      <input formControlName="psw" type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password">
-      <label for="floatingPassword">Password</label>
+      <input formControlName="password" type="password" class="form-control" id="password" name="password" placeholder="Password">
+      <label for="password">Password</label>
+      <span class="error-block" *ngIf="password?.invalid && password?.touched">
+        Nije dobra sifra!
+      </span>
     </div>
 
     <div class="checkbox mb-3">

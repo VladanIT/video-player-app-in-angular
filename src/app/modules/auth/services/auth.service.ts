@@ -40,8 +40,8 @@ export class AuthService {
     }
 
     users.forEach((u: { email: string; password: string; }) => {
-      if (u.email == data.mail && u.password == data.psw) {
-        localStorage.setItem('login', JSON.stringify(data.mail));
+      if (u.email == data.email && u.password == data.password) {
+        localStorage.setItem('login', JSON.stringify(data.email));
         this.router.navigate(['/home']);
       }
     });

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { AuthService } from '../../services/auth.service';
 
@@ -11,9 +11,12 @@ import { AuthService } from '../../services/auth.service';
 export class LoginComponent implements OnInit {
 
   loginForm = new FormGroup({
-    mail: new FormControl(''),
-    psw: new FormControl('')
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [Validators.required, Validators.pattern('[0-9]{5,}')])
   });
+
+  get email(){return this.loginForm.get('email')}
+  get password(){return this.loginForm.get('password')}
 
   constructor(public authService: AuthService) { }
 
