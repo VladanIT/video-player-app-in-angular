@@ -2,6 +2,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 import { VideosService } from './../../../services/videos/videos.service';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-add-video',
@@ -10,7 +11,7 @@ import { VideosService } from './../../../services/videos/videos.service';
 })
 export class AddVideoComponent implements OnInit {
 
-  constructor(public VideosService: VideosService) { }
+  constructor(public VideosService: VideosService, public dialogRef: MatDialogRef<AddVideoComponent>) { }
 
   ngOnInit(): void {
   }
@@ -27,8 +28,9 @@ export class AddVideoComponent implements OnInit {
   // description: string = "";
   // link: string = "";
 
-  async saveData(){
+  saveData(){
     this.VideosService.addVideo(this.addForm.value);
+    this.dialogRef.close(true);
   }
 
 }

@@ -22,7 +22,12 @@ export class VideoComponent implements OnInit {
   }
 
   openDialogAddVideo(){
-    this.dialog.open(AddVideoComponent);
+    const dialogRef = this.dialog.open(AddVideoComponent);
+    dialogRef.afterClosed().subscribe(result => {
+      if(result) {
+        this.videos = this.list.getVideoList();
+      }
+    })
   }
 
   openDialogEdit(value : any){
